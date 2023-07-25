@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.card-img{
+  z-index: 1;
+  background-color: white;
+}
+
+.card-img:hover{
+  transform: scale(1.05);
+  transition: all .5s;
+}

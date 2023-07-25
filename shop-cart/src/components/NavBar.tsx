@@ -15,9 +15,6 @@ export const NavBar = () => {
           <Nav.Link to="/store" as={NavLink}>
             Store
           </Nav.Link>
-          <Nav.Link to="/about" as={NavLink}>
-            About
-          </Nav.Link>
         </Nav>
         <Button onClick={openCart} style={{width:'2.9rem',height:'2.9rem'}} className='rounded-circle' variant='outline-primary-black'>
         <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
