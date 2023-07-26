@@ -42,18 +42,20 @@ export const Product = () => {
   }, [params.productId])
   return (
     <>
-    
     <div style={{cursor:'pointer', width:'max-content'}} onClick={goBack}>
       &lt;- Go back
     </div>
-    <Row lg={2} md={2} xs={1} className='g-5 p-0'>
-      <Col  className='d-flex justify-content-center border border-dark rounded bg-white overflow-hidden'> 
+    <Container >
+    <Row lg={2} md={2} xs={1} className='g-5'>
+      <Col xs='10' className='d-flex border border-black justify-content-center rounded bg-white overflow-hidden'> 
         <Image src={product?.image} style={{height:'200px'}} className='object-fit-contain '></Image>
       </Col>
       <Col >
       {product?.title}
       </Col>
     </Row>
+    </Container>
     </>
+    
   )
 }

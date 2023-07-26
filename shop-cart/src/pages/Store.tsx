@@ -12,6 +12,7 @@ export default function Store() {
         </Col>
       })}
     </Row>
+    <div id="idd">hiiiiii</div>
     </>
   )
 }
