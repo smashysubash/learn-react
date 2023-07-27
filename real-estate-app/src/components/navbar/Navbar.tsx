@@ -1,12 +1,12 @@
-import React from 'react'
-import { Container, Navbar as NavbarBs} from 'react-bootstrap'
+
+import { Container, Nav, Navbar as NavbarBs} from 'react-bootstrap'
 import {IconDiv} from './style'
+import { NavBar2 } from './style'
 
 export const Navbar = () => {
-  return (
-    <>
-    <NavbarBs expand='lg'>
-      <Container fluid className='bg-white'>    
+  const navContainer = () =>{
+    return (
+      <Container fluid className='bg-transparent'>    
         <NavbarBs.Brand>
         <IconDiv >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -17,16 +17,23 @@ export const Navbar = () => {
         <NavbarBs.Toggle aria-controls='navbar-content'>
           <IconDiv>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+            </svg>  
           </IconDiv>
         </NavbarBs.Toggle>
-        <NavbarBs.Collapse id='navbar-content'>
-
+        <NavbarBs.Collapse id='navbar-content' className='justify-content-center'>
+          <Nav>
+            <Nav.Link href='#home'  className='me-4 text-light'>Home</Nav.Link>
+            <Nav.Link href='#project' className='me-4 text-light'>Project</Nav.Link>
+            <Nav.Link href='#aboutus' className='me-4 text-light'>About Us</Nav.Link>
+          </Nav>
         </NavbarBs.Collapse>
       </Container>
-    </NavbarBs>
-    </>
-    
+    )
+  }
+  return (
+      <NavBar2 expand='lg'className='sticky-top'>
+        {navContainer()}
+      </NavBar2>
   )
 }

@@ -1,11 +1,10 @@
 import React from 'react'
-import { Navbar } from '../components/Navbar'
+import { Topcont } from '../containers/topcontainer/Topcont'
 
 export const Home = () => {
   return (
     <>
-      <Navbar></Navbar>
-      <div className='bg-light pb-5'>Home</div>
+      <Topcont></Topcont>
     </>
   )
 }
