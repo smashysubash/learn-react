@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap'
 import styled from 'styled-components'
 
 export const container = styled(Container)`
-  margin-top: 20vh;
+  margin-top: 25vh;
 `
 
 export const TitleHead = styled.h1`
@@ -45,6 +45,7 @@ export const Button = styled.button`
 }
 
 &:hover {
+  background-color: #212121;
  color: #e8e8e8;
 }
 

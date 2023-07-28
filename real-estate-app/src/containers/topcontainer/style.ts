@@ -7,7 +7,7 @@ interface imgprops {
 }
 
 export const HeadDiv = styled.div<imgprops>`
-  height: 170vh;
+  height: min(130vh,1000px);
   background-image: url(${props=> props.image});
   background-repeat: no-repeat;
   width: 100%;

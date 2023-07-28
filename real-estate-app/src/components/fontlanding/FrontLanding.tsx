@@ -11,7 +11,7 @@ export const FrontLanding = () => {
         <Col lg='7' >
           <Row>
             <Col xs='12'><s.TitleHead>{landingpage.front.heading}</s.TitleHead></Col>
-            <Col>
+            <Col >
               <s.Button>{landingpage.front.expolrebutton}</s.Button>
               <s.Button2>{landingpage.front.vrbutton}</s.Button2>
             </Col>
