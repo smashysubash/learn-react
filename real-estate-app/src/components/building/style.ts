@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { style } from "../../data/style";
 import { Col, Container, Image } from "react-bootstrap";
-import { landingpage } from "../../data/landingpage";
 
 interface imgp {
   image: string;
@@ -61,10 +60,11 @@ export const Pcontainer = styled(Container)`
 ` 
 
 export const Imgcontainer = styled.div<imgp>`
-  background-image: url(${prop=>prop.image});
+  background-image:  linear-gradient( rgba(0, 0, 0, 0.1),  rgba(0, 0, 0, 0.2)  ), url(${prop=>prop.image});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  
 ` 
 
 export const QuoteDiv = styled(Col)`
@@ -82,8 +82,8 @@ export const Playbutton = styled.button`
   display: flex;
   justify-content: center;
   color: #fff;
-  width: 80px;
-  height: 80px;
+  width: calc(1.5rem + 3.5vw);
+  height: calc(1.5rem + 3.5vw);
   border-radius: 100%;
   background: linear-gradient(30deg, rgb(255, 130, 0) 20%, rgb(255, 38, 0) 80%);
   transition: all 0.3s ease-in-out 0s;
@@ -101,4 +101,17 @@ export const Playbutton = styled.button`
     box-shadow: 0 0 0 45px rgba(193,244,246,0);
   }
 }
+`
+export const Imgcol = styled(Col)`
+  position: relative;
+  &::before{
+    content:'';
+    position: absolute;
+    height: 550px;
+    width: 380px;
+    background: #fff5e2;
+    transform: skew(0deg, 20deg);
+    border-radius: 20px;
+    top: 5px;
+  }
 `
