@@ -1,8 +1,9 @@
-import { Container } from 'react-bootstrap'
+import {Col, Container } from 'react-bootstrap'
 import styled from 'styled-components'
 
 export const container = styled(Container)`
-  margin-top: 25vh;
+  transform: translateY(5vh);
+  z-index: 5;
 `
 
 export const TitleHead = styled.h1`
@@ -11,6 +12,9 @@ export const TitleHead = styled.h1`
   font-style: oblique;
   font-size: calc(1.5rem + 3.3vw);
   color: white;
+  animation: show-text 2s .1s forwards ease-out;
+  position: relative;
+  
 `
 
 export const Button = styled.button`
@@ -28,6 +32,7 @@ export const Button = styled.button`
  transition: all 250ms;
  overflow: hidden;
  margin: 1rem;
+ 
 
 &::before {
  content: "";
@@ -70,6 +75,32 @@ export const Button2 = styled.button`
 &:hover {
  background: #2b2a2a;
 }
+`
+export const playbutton = styled.button`
+  margin-left:10vw;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  width: calc(1.5rem + 3.3vw);
+  height: calc(1.5rem + 3.3vw);
+  border-radius: 100%;
+  background: linear-gradient(30deg, rgb(255, 130, 0) 20%, rgb(255, 38, 0) 80%);
+  transition: all 0.3s ease-in-out 0s;
+  box-shadow: rgba(193, 244, 246, 0.698) 0px 0px 0px 0px;
+  animation: 1.2s cubic-bezier(0.8, 0, 0, 1) 0s infinite normal none running pulse;
+  align-items: center;
+  border: 0;
 
+.button:is(:hover, :focus) {
+  transform: scale(1.2);
+}
 
+@keyframes pulse {
+  100% {
+    box-shadow: 0 0 0 45px rgba(193,244,246,0);
+  }
+}
+`
+export const Acol = styled(Col)`
+animation: show-text 2s .1s forwards ease-out;
 `

@@ -15,6 +15,7 @@ export const AboutDiv = styled.div`
     content: '_____';
     vertical-align: super;
   }
+  animation: show-text 2s .1s forwards ease-out;
 `
 export const TitleHead = styled.h1`
   margin-bottom: 0.5rem;
@@ -26,7 +27,6 @@ export const TitleHead = styled.h1`
 `
 
 export const AboutContainer = styled(Container)`
-  margin-top: 10vh;
   background-repeat: no-repeat;
   background-size: 25vw;
   background-position: top left 10px;
