@@ -1,6 +1,6 @@
 
 import { Container, Nav, Navbar as NavbarBs} from 'react-bootstrap'
-import {IconDiv, NavLink, NavBar2 } from './style'
+import {IconDiv, NavLink, NavBar2, Threeline } from './style'
 
 export const Navbar = () => {
   const navContainer = () =>{
@@ -14,17 +14,18 @@ export const Navbar = () => {
         </IconDiv>
         </NavbarBs.Brand>
         <NavbarBs.Toggle aria-controls='navbar-content' className='border-0'>
-          <IconDiv>
+          <Threeline>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
             </svg>  
-          </IconDiv>
+          </Threeline>
         </NavbarBs.Toggle>
         <NavbarBs.Collapse id='navbar-content' className='justify-content-center'>
           <Nav >
             <NavLink href='#home'  className='me-4 '>Home</NavLink>
             <NavLink href='#about' className='me-4 '>About Us</NavLink>
             <NavLink href='#project' className='me-4 '>Project</NavLink>
+            <NavLink href='#contactus' className='me-4 '>Contact Us</NavLink>
           </Nav>
         </NavbarBs.Collapse>
       </Container>

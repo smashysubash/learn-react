@@ -34,7 +34,7 @@ export const TriDiv = styled.div`
 `
 
 export const HDiv =styled.div`
-height: min(120vh,1000px)
+height: min(120vh,1000px);
 `
 
 export const Curve = styled.div`

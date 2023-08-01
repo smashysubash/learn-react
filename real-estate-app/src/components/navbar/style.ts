@@ -7,6 +7,22 @@ export const IconDiv = styled.div`
   margin-right: 10px;
   width: 30px;
   color: white;
+  position: relative;
+  &::before{
+    content:'Dax';
+    position: absolute;
+    left: 33px;
+    top: 2.5px;
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 22px;    
+  }
+`
+export const Threeline = styled.div`
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 30px;
+  color: white;
 `
 export const NavBar2 = styled(Navbar)`
 position: sticky;

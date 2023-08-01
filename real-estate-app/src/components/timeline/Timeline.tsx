@@ -38,7 +38,7 @@ const Subcomp = ()=>{
   return(
     <>
       <ImgComp md='6' xs='10' lg='6' className='pt-5' key={index} ><Image fluid rounded src={tldata[index]?.imageurl} ></Image></ImgComp>
-      <Col xs='10' md='5' lg='5' ><ArrDiv className='m-5 p-3'>{iterateFromArrayCircular(tldata, index).map(item=> <ColorList key={item.no} onClick={()=>Clickonitem(item.no)} className='d-flex align-items-center m-3' ><Listcomp  data={item}></Listcomp></ColorList>)}</ArrDiv></Col>
+      <Col xs='10' md='5' lg='5' ><ArrDiv className='d-flex flex-column justify-content-center'>{iterateFromArrayCircular(tldata, index).map(item=> <ColorList key={item.no} onClick={()=>Clickonitem(item.no)} className='d-flex align-items-center m-3' ><Listcomp  data={item}></Listcomp></ColorList>)}</ArrDiv></Col>
     </>
   )
 }

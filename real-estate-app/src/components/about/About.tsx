@@ -9,21 +9,21 @@ export const About = () => {
       <AboutContainer fluid='md' id='about'>
         <Row  className='justify-content-center mb-5'>
           <Col xs='12' className='mb-5'>
-          <Fade direction='up' triggerOnce duration={1500}>
+          <Fade direction='up' triggerOnce duration={1200}>
             <AboutDiv>
               ABOUT DAX
             </AboutDiv>
           </Fade>
           </Col>
           <Col className='mb-4' md='9' xs='12'>
-            <Fade direction='up' triggerOnce duration={1500}>
+            <Fade direction='up' triggerOnce duration={1200}>
             <TitleHead>
               DAX is a modern residential comlex in your city
             </TitleHead>
             </Fade>
           </Col>
           <Col  className='mb-4' xs='12' md='7'>
-            <Fade direction='up' triggerOnce duration={1500}>
+            <Fade direction='up' triggerOnce duration={1200}>
             <Aboutcont>Lorem ipsum dolor sit amet consectetur adipisicing elit. Volu ptates doloribus ipsam odit harum quae corporis distinctio consequuntur vitae doloremque eius praesentium dolor placeat labore ab, accusamus ex quis similique porro.</Aboutcont>
             </Fade>
           </Col>

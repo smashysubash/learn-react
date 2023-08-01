@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { style } from "../../data/style";
 import { Col, Image } from "react-bootstrap";
-import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
 
 export const TimeDiv = styled.div`
   display: inline;
@@ -36,13 +35,12 @@ export const Aboutcont = styled.p`
 `
 export const Roundlist =styled.div`
   position : relative;
-  border: inset;
+  border: solid 1px black;
   width: 30px;
   height: 30px;
   border-radius: 100%;
   padding:20px;
-  margin-right: 30px;
-
+  margin-right: 20px;
   &::after{
   position: absolute;
 	content:'';
@@ -55,22 +53,34 @@ export const Roundlist =styled.div`
   }
 `
 export const ArrDiv = styled.div`
-position: relative;
-&::before{
-  content: '<--';
-  position: absolute;
-  color: ${style.fontcolor2};
-  top: 35px;
-  left: -5%;
-  font-size: 28px;
-}
+padding: 5px;
+padding-left: 5vw;
+padding-top: 20px;
 `
 export const ColorList =styled.div`
 padding-bottom: 5px;
+position: relative;
 cursor: pointer;
 &:first-child{
   color: ${style.fontcolor2};
 }
+&:first-child::before{
+  position: absolute;
+  left: -45px;
+  top: -5px;
+  content: '←';
+  font-size: 2.5rem;
+  padding-right: 5px;
+}
+&:first-child::after{
+    position: absolute;
+    content:'';
+    left: -10px;
+    width: 60px;
+    height: 60px;
+    border: solid 1px ;
+    border-radius: 50%;
+  }
 animation: myAnim 1s linear 0s 1 normal forwards;
 @keyframes myAnim {
 	0% {

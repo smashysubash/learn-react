@@ -9,7 +9,7 @@ export const Building = () => {
     return (
       <Container fluid='md'>
         <Row  className='justify-content-center mt-3' >
-        <Fade direction='up' triggerOnce duration={1000}>
+        <Fade direction='up' triggerOnce duration={1200}>
           <Col className='mb-4' xs='12' md='9'>
             <TitleHead>
                Location, Community, Quality Living. It Starts Here!
@@ -34,7 +34,7 @@ export const Building = () => {
     <>
     <Row className='mt-4'>
       <Imgcol sm='5' md='6' className='p-4 d-flex align-self-center justify-content-center' >
-        <Fade direction='left' triggerOnce duration={1500}>
+        <Fade direction='left' triggerOnce duration={1200}>
         <Image style={{height: '500px'}} src='/images/image1.jpg' fluid rounded></Image>
         </Fade>
       </Imgcol>
@@ -45,18 +45,18 @@ export const Building = () => {
     <Pcontainer >
       <Row className='justify-content-center'>
         <Col lg='8' sm='10'>
-        <Fade direction='up' triggerOnce duration={1500}>
+        <Fade direction='up' triggerOnce duration={1200}>
           <Pimage src='/images/avathar2.jpg' ></Pimage>
         </Fade>
         </Col>
           <QuoteDiv lg='8' sm='10' className='mt-5'>
-            <Fade direction='up' triggerOnce duration={1500}>
+            <Fade direction='up' triggerOnce duration={1200}>
               “Quis lectus nulla at volutpat diam. Sed nisi lacus sed viverra tellus in hac. Enim nunc faucibus a pellentesque sit. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus. Risus ultricies tristique nulla aliquet enim tortor.”
             </Fade>
           </QuoteDiv>
           
         <Col lg='8' sm='10' className='mt-3'>
-          <Fade direction='up'cascade triggerOnce duration={1500}>
+          <Fade direction='up'cascade triggerOnce duration={1200}>
             <NameDiv>Philip Demarco </NameDiv><div>Lead architect and partner</div>
           </Fade>
         </Col>
