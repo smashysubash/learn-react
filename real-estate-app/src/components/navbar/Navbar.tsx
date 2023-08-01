@@ -1,6 +1,7 @@
 
 import { Container, Nav, Navbar as NavbarBs} from 'react-bootstrap'
 import {IconDiv, NavLink, NavBar2, Threeline } from './style'
+import { landingpage } from '../../data/landingpage'
 
 export const Navbar = () => {
   const navContainer = () =>{
@@ -22,10 +23,10 @@ export const Navbar = () => {
         </NavbarBs.Toggle>
         <NavbarBs.Collapse id='navbar-content' className='justify-content-center'>
           <Nav >
-            <NavLink href='#home'  className='me-4 '>Home</NavLink>
-            <NavLink href='#about' className='me-4 '>About Us</NavLink>
-            <NavLink href='#project' className='me-4 '>Project</NavLink>
-            <NavLink href='#contactus' className='me-4 '>Contact Us</NavLink>
+            <NavLink href='#home'  className='me-4 '>{landingpage.navbar.nav1}</NavLink>
+            <NavLink href='#about' className='me-4 '>{landingpage.navbar.nav2}</NavLink>
+            <NavLink href='#project' className='me-4 '>{landingpage.navbar.nav3}</NavLink>
+            <NavLink href='#contactus' className='me-4 '>{landingpage.navbar.nav4}</NavLink>
           </Nav>
         </NavbarBs.Collapse>
       </Container>

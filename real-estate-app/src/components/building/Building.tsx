@@ -12,14 +12,14 @@ export const Building = () => {
         <Fade direction='up' triggerOnce duration={1200}>
           <Col className='mb-4' xs='12' md='9'>
             <TitleHead>
-               Location, Community, Quality Living. It Starts Here!
+               {landingpage.building.headdiv}
             </TitleHead>
           </Col>
           <Col  className='mb-4' xs='12' md='9'>
-            <Aboutcont>Volu ptates doloribus ipsam odit harum quae corporis distinctio consequuntur vitae doloremque eius praesentium dolor placeat labore ab, accusamus ex quis similique porro.</Aboutcont>
+            <Aboutcont>{landingpage.building.contentdiv}</Aboutcont>
           </Col>
           <Col className='mb-4' xs='12' md='9'>  
-            <Button2>{landingpage.front.vrbutton}</Button2>
+            <Button2>{landingpage.building.vrbutton}</Button2>
           </Col>
           {/* <Col className='mt-1' xs='12' md='10'>
             <Image src='/images/image2.jpg' fluid rounded></Image>
@@ -51,13 +51,13 @@ export const Building = () => {
         </Col>
           <QuoteDiv lg='8' sm='10' className='mt-5'>
             <Fade direction='up' triggerOnce duration={1200}>
-              “Quis lectus nulla at volutpat diam. Sed nisi lacus sed viverra tellus in hac. Enim nunc faucibus a pellentesque sit. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus. Risus ultricies tristique nulla aliquet enim tortor.”
+              {landingpage.testimonal.quote}
             </Fade>
           </QuoteDiv>
           
         <Col lg='8' sm='10' className='mt-3'>
           <Fade direction='up'cascade triggerOnce duration={1200}>
-            <NameDiv>Philip Demarco </NameDiv><div>Lead architect and partner</div>
+            <NameDiv>{landingpage.testimonal.author}</NameDiv>{landingpage.testimonal.authorrole}<div></div>
           </Fade>
         </Col>
       </Row>
@@ -72,7 +72,7 @@ export const Building = () => {
             </svg>
           </Playbutton>
         </Col >
-        <Col sm='10' md='7' className='mt-5 mb-5 text-center d-flex justify-content-center '><TitleHead ><Fade triggerOnce >Discover the true definition of luxury</Fade></TitleHead>
+        <Col sm='10' md='7' className='mt-5 mb-5 text-center d-flex justify-content-center '><TitleHead ><Fade triggerOnce >{landingpage.testimonal.bgtext}</Fade></TitleHead>
         </Col>
       </Row>
     </Pcontainer>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Col, Image, Row } from 'react-bootstrap'
 import { Aboutcont, ArrDiv, ColorList, ImgComp, Roundlist, TimeDiv, TitleHead } from './style'
 import { tldata } from '../../data/timeline'
+import { landingpage } from '../../data/landingpage';
 
 interface contarray {
   no: number;
@@ -47,9 +48,9 @@ export const Timeline = () => {
   return (
     <>
     <Row className='text-left justify-content-center mt-5' id='project'>
-      <Col sm='11' lg='12' className='mb-3'><TimeDiv> TIMELINE </TimeDiv></Col>
-      <Col sm='11' xs='12' lg='6'><TitleHead>Where innovation will inspire you</TitleHead></Col>
-      <Col sm='11' xs='12' lg='6'><Aboutcont>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam dignissim diam quis enim lobortis.</Aboutcont></Col>
+      <Col sm='11' lg='12' className='mb-3'><TimeDiv>{landingpage.timeline.title}</TimeDiv></Col>
+      <Col sm='11' xs='12' lg='6'><TitleHead></TitleHead></Col>
+      <Col sm='11' xs='12' lg='6'><Aboutcont>{landingpage.timeline.contentdiv}</Aboutcont></Col>
       <Subcomp ></Subcomp>
     </Row>
     </>
