@@ -11,6 +11,8 @@ interface Props {
   author: string;
   authorrole: string;
   bgtext: string;
+  buildingimg: string;
+  profileimg: string;
 }
 
 export const Building = ({
@@ -21,6 +23,8 @@ export const Building = ({
   author,
   authorrole,
   bgtext,
+  buildingimg,
+  profileimg
 }: Props) => {
   const sidediv = () => {
     return (
@@ -53,7 +57,7 @@ export const Building = ({
           <Fade direction="left" triggerOnce>
             <Image
               style={{ height: "500px" }}
-              src="/images/image1.jpg"
+              src={buildingimg}
               fluid
               rounded
             ></Image>
@@ -65,7 +69,7 @@ export const Building = ({
         <Row className="justify-content-center">
           <Col lg="8" sm="10">
             <Fade direction="up" triggerOnce>
-              <S.Pimage src="/images/avathar2.jpg"></S.Pimage>
+              <S.Pimage src={profileimg}></S.Pimage>
             </Fade>
           </Col>
           <S.QuoteDiv lg="8" sm="10" className="mt-5">

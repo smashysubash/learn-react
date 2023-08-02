@@ -1,7 +1,6 @@
 import { Col, Container, Row, Image } from "react-bootstrap";
 import * as S from "./style";
 
-
 interface Contactprops {
   title: string;
   headdiv: string;
@@ -13,42 +12,53 @@ interface Contactprops {
   parah: string;
   trademark: string;
   trademark2: string;
+  images: string[];
+  imageswidth: string;
 }
 
-const CategoryLogo = () => {
+const CategoryLogo = ({
+  images,
+  imageswidth,
+}: {
+  images: string[];
+  imageswidth: string;
+}) => {
   return (
     <>
-      <Col>
-        <S.Anchor href="#" className="mt-3 mb-3 d-flex justify-content-center">
-          <Image width={"125px"} src="/images/client1.png"></Image>
-        </S.Anchor>
-      </Col>
-      <Col>
-        <S.Anchor href="#" className="mt-3 mt-3 d-flex justify-content-center">
-          <Image width={"125px"} src="/images/client2.png"></Image>
-        </S.Anchor>
-      </Col>
-      <Col>
-        <S.Anchor href="#" className="mt-3 mt-3 d-flex justify-content-center">
-          <Image width={"125px"} src="/images/client3.png"></Image>
-        </S.Anchor>
-      </Col>
-      <Col>
-        <S.Anchor href="#" className="mt-3 mt-3 d-flex justify-content-center">
-          <Image width={"110px"} src="/images/client4.png"></Image>
-        </S.Anchor>
-      </Col>
+      {images.map((image, index) => (
+        <Col key={index}>
+          <S.Anchor
+            href="#"
+            className="mt-3 mb-3 d-flex justify-content-center"
+          >
+            <Image width={imageswidth} src={image} />
+          </S.Anchor>
+        </Col>
+      ))}
     </>
   );
 };
 
-export const Contactus = ({title, headdiv, address, phone, mail, msgbtn, mapdata, parah, trademark, trademark2}: Contactprops) => {
+export const Contactus = ({
+  title,
+  headdiv,
+  address,
+  phone,
+  mail,
+  msgbtn,
+  mapdata,
+  parah,
+  trademark,
+  trademark2,
+  images,
+  imageswidth,
+}: Contactprops) => {
   return (
     <>
       <hr></hr>
       <Container className="mt-5 mb-5">
         <Row className="mt-5 mb-5 d-flex align-items-baseline">
-          <CategoryLogo/>
+          <CategoryLogo images={images} imageswidth={imageswidth} />
         </Row>
       </Container>
       <S.MapDiv id="contactus">

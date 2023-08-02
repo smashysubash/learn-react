@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import * as S from "./style";
-import { tldata } from "../../data/timeline";
-import { landingpage } from "../../data/landingpage.config";
 
 interface contarray {
   no: number;
@@ -15,6 +13,7 @@ interface Props {
   title: string;
   headdiv: string;
   contentdiv: string;
+  tldata: contarray[];
 }
 
 const iterateFromArrayCircular = (arr: contarray[], startIndex: number) => {
@@ -37,7 +36,7 @@ const Listcomp = ({ data }: { data: contarray }) => {
   );
 };
 
-const Subcomp = () => {
+const Subcomp = ({tldata}: {tldata: contarray[]}) => {
   const [index, setIndex] = useState(0);
   const Clickonitem = (no: number) => {
     setIndex(no - 1);
@@ -64,7 +63,7 @@ const Subcomp = () => {
   );
 };
 
-export const Timeline = ({title,headdiv,contentdiv}: Props) => {
+export const Timeline = ({title,headdiv,contentdiv, tldata}: Props) => {
   return (
     <>
       <Row className="text-left justify-content-center mt-5" id="project">
@@ -77,7 +76,7 @@ export const Timeline = ({title,headdiv,contentdiv}: Props) => {
         <Col sm="11" xs="12" lg="6">
           <S.Aboutcont>{contentdiv}</S.Aboutcont>
         </Col>
-        <Subcomp></Subcomp>
+        <Subcomp tldata={tldata}/>
       </Row>
     </>
   );
