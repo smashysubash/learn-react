@@ -1,35 +1,35 @@
-import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import { AboutDiv, TitleHead, AboutContainer, Aboutcont } from './style'
+import { Col, Row } from "react-bootstrap";
 import { Fade } from "react-awesome-reveal";
-import { landingpage } from '../../data/landingpage';
+import * as S from "./style";
 
-export const About = () => {
+interface Props {
+  title: string;
+  headdiv: string;
+  contentdiv: string;
+}
+
+export const About = ({ title, headdiv, contentdiv }: Props) => {
   return (
     <>
-      <AboutContainer fluid='md' id='about'>
-        <Row  className='justify-content-center mb-5'>
-          <Col xs='12' className='mb-5'>
-          <Fade direction='up' triggerOnce duration={1200}>
-            <AboutDiv>
-              {landingpage.about.title}
-            </AboutDiv>
-          </Fade>
-          </Col>
-          <Col className='mb-4' md='9' xs='12'>
-            <Fade direction='up' triggerOnce duration={1200}>
-            <TitleHead>
-              {landingpage.about.headdiv}
-            </TitleHead>
+      <S.AboutContainer fluid="md" id="about">
+        <Row className="justify-content-center mb-5">
+          <Col xs="12" className="mb-5">
+            <Fade direction="up" triggerOnce>
+              <S.AboutDiv>{title}</S.AboutDiv>
             </Fade>
           </Col>
-          <Col  className='mb-4' xs='12' md='7'>
-            <Fade direction='up' triggerOnce duration={1200}>
-            <Aboutcont>{landingpage.about.contentdiv}</Aboutcont>
+          <Col className="mb-4" md="9" xs="12">
+            <Fade direction="up" triggerOnce >
+              <S.TitleHead>{headdiv}</S.TitleHead>
+            </Fade>
+          </Col>
+          <Col className="mb-4" xs="12" md="7">
+            <Fade direction="up" triggerOnce >
+              <S.Aboutcont>{contentdiv}</S.Aboutcont>
             </Fade>
           </Col>
         </Row>
-      </AboutContainer>
+      </S.AboutContainer>
     </>
-  )
-}
+  );
+};

@@ -1,82 +1,117 @@
-import React from 'react'
-import { Col, Container, Image, Row } from 'react-bootstrap'
-import  { Pcontainer, Aboutcont, Button2, TitleHead, Pimage, QuoteDiv,NameDiv, Playbutton, Imgcontainer, Imgcol } from './style'
-import { landingpage } from '../../data/landingpage'
-import {Fade} from 'react-awesome-reveal'
+import { Col, Container, Image, Row } from "react-bootstrap";
+import * as S from "./style";
+import { landingpage } from "../../data/landingpage.config";
+import { Fade } from "react-awesome-reveal";
 
-export const Building = () => {
-  const divivsion = ()=>{
+interface Props {
+  headdiv: string;
+  contentdiv: string;
+  vrbutton: string;
+  quote: string;
+  author: string;
+  authorrole: string;
+  bgtext: string;
+}
+
+export const Building = ({
+  headdiv,
+  contentdiv,
+  vrbutton,
+  quote,
+  author,
+  authorrole,
+  bgtext,
+}: Props) => {
+  const sidediv = () => {
     return (
-      <Container fluid='md'>
-        <Row  className='justify-content-center mt-3' >
-        <Fade direction='up' triggerOnce duration={1200}>
-          <Col className='mb-4' xs='12' md='9'>
-            <TitleHead>
-               {landingpage.building.headdiv}
-            </TitleHead>
-          </Col>
-          <Col  className='mb-4' xs='12' md='9'>
-            <Aboutcont>{landingpage.building.contentdiv}</Aboutcont>
-          </Col>
-          <Col className='mb-4' xs='12' md='9'>  
-            <Button2>{landingpage.building.vrbutton}</Button2>
-          </Col>
-          {/* <Col className='mt-1' xs='12' md='10'>
-            <Image src='/images/image2.jpg' fluid rounded></Image>
-          </Col> */}
+      <Container fluid="md">
+        <Row className="justify-content-center mt-3">
+          <Fade direction="up" triggerOnce>
+            <Col className="mb-4" xs="12" md="9">
+              <S.TitleHead>{headdiv}</S.TitleHead>
+            </Col>
+            <Col className="mb-4" xs="12" md="9">
+              <S.Aboutcont>{contentdiv}</S.Aboutcont>
+            </Col>
+            <Col className="mb-4" xs="12" md="9">
+              <S.Button2>{vrbutton}</S.Button2>
+            </Col>
           </Fade>
         </Row>
       </Container>
-    )
-  }
+    );
+  };
 
   return (
     <>
-    <Row className='mt-4'>
-      <Imgcol sm='5' md='6' className='p-4 d-flex align-self-center justify-content-center' >
-        <Fade direction='left' triggerOnce duration={1200}>
-        <Image style={{height: '500px'}} src='/images/image1.jpg' fluid rounded></Image>
-        </Fade>
-      </Imgcol>
-      <Col className='mt-5'>
-          {divivsion()}
-      </Col>
-    </Row>
-    <Pcontainer >
-      <Row className='justify-content-center'>
-        <Col lg='8' sm='10'>
-        <Fade direction='up' triggerOnce duration={1200}>
-          <Pimage src='/images/avathar2.jpg' ></Pimage>
-        </Fade>
-        </Col>
-          <QuoteDiv lg='8' sm='10' className='mt-5'>
-            <Fade direction='up' triggerOnce duration={1200}>
-              {landingpage.testimonal.quote}
-            </Fade>
-          </QuoteDiv>
-          
-        <Col lg='8' sm='10' className='mt-3'>
-          <Fade direction='up'cascade triggerOnce duration={1200}>
-            <NameDiv>{landingpage.testimonal.author}</NameDiv>{landingpage.testimonal.authorrole}<div></div>
+      <Row className="mt-4">
+        <S.Imgcol
+          sm="5"
+          md="6"
+          className="p-4 d-flex align-self-center justify-content-center"
+        >
+          <Fade direction="left" triggerOnce>
+            <Image
+              style={{ height: "500px" }}
+              src="/images/image1.jpg"
+              fluid
+              rounded
+            ></Image>
           </Fade>
-        </Col>
+        </S.Imgcol>
+        <Col className="mt-5">{sidediv()}</Col>
       </Row>
-    </Pcontainer>
-    <Imgcontainer className='mt-5' image='/images/image2.jpg'>
-    <Pcontainer fluid='sm' className='ps-5 pe-5'>
-      <Row className='d-flex justify-content-center'>
-        <Col className='justify-content-center d-flex ps-5 pe-5' xs='12'>
-          <Playbutton> 
-            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="calc(.5rem + 1.5vw)">
-              <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" fill="currentColor"></path>
-            </svg>
-          </Playbutton>
-        </Col >
-        <Col sm='10' md='7' className='mt-5 mb-5 text-center d-flex justify-content-center '><TitleHead ><Fade triggerOnce >{landingpage.testimonal.bgtext}</Fade></TitleHead>
-        </Col>
-      </Row>
-    </Pcontainer>
-    </Imgcontainer>
+      <S.Pcontainer>
+        <Row className="justify-content-center">
+          <Col lg="8" sm="10">
+            <Fade direction="up" triggerOnce>
+              <S.Pimage src="/images/avathar2.jpg"></S.Pimage>
+            </Fade>
+          </Col>
+          <S.QuoteDiv lg="8" sm="10" className="mt-5">
+            <Fade direction="up" triggerOnce>
+              {quote}
+            </Fade>
+          </S.QuoteDiv>
+          <Col lg="8" sm="10" className="mt-3">
+            <Fade direction="up" cascade triggerOnce>
+              <S.NameDiv>{author}</S.NameDiv>
+              
+              <div>{authorrole}</div>
+            </Fade>
+          </Col>
+        </Row>
+      </S.Pcontainer>
+      <S.Imgcontainer className="mt-5" image="/images/image2.jpg">
+        <S.Pcontainer fluid="sm" className="ps-5 pe-5">
+          <Row className="d-flex justify-content-center">
+            <Col className="justify-content-center d-flex ps-5 pe-5" xs="12">
+              <S.Playbutton>
+                <svg
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  width="calc(.5rem + 1.5vw)"
+                >
+                  <path
+                    d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </S.Playbutton>
+            </Col>
+            <Col
+              sm="10"
+              md="7"
+              className="mt-5 mb-5 text-center d-flex justify-content-center "
+            >
+              <S.TitleHead>
+                <Fade triggerOnce>{bgtext}</Fade>
+              </S.TitleHead>
+            </Col>
+          </Row>
+        </S.Pcontainer>
+      </S.Imgcontainer>
     </>
-  )
-}
+  );
+};
