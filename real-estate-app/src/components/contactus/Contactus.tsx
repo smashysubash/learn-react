@@ -31,7 +31,7 @@ const CategoryLogo = ({
             href="#"
             className="mt-3 mb-3 d-flex justify-content-center"
           >
-            <Image width={imageswidth} src={image} />
+            <Image width={imageswidth} alt="category logo" src={image} />
           </S.Anchor>
         </Col>
       ))}
@@ -39,7 +39,7 @@ const CategoryLogo = ({
   );
 };
 
-export const Contactus = ({
+export const ContactUs = ({
   title,
   headdiv,
   address,
@@ -61,7 +61,7 @@ export const Contactus = ({
           <CategoryLogo images={images} imageswidth={imageswidth} />
         </Row>
       </Container>
-      <S.MapDiv id="contactus">
+      <S.MapDiv id="ContactUs">
         <Container>
           <Row className="justify-content-center">
             <Col sm="12" className="mb-2">

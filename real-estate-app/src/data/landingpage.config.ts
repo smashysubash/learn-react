@@ -9,7 +9,6 @@ export const landingpage = {
     headdiv: "DAX is a modern residential comlex in your city",
     contentdiv:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Volu ptates doloribus ipsam odit harum quae corporis distinctio consequuntur vitae doloremque eius praesentium dolor placeat labore ab, accusamus ex quis similique porro.",
-    profileimg: "/images/avathar2.jpg",
   },
   building: {
     headdiv: "Location, Community, Quality Living. It Starts Here!",
@@ -24,6 +23,7 @@ export const landingpage = {
     author: "Philip Demarco ",
     authorrole: "Lead architect and partner",
     bgtext: "Discover the true definition of luxury",
+    profileimg: "/images/avathar2.jpg",
   },
   contact: {
     title: "Developer",
@@ -63,7 +63,7 @@ export const landingpage = {
       },
       {
         title: "Contact us",
-        link: "#contactus",
+        link: "#ContactUs",
       },
     ],
   },

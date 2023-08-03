@@ -44,7 +44,7 @@ const Subcomp = ({tldata}: {tldata: contarray[]}) => {
   return (
     <>
       <S.ImgComp md="6" xs="10" lg="6" className="pt-5" key={index}>
-        <Image fluid rounded src={tldata[index]?.imageurl}></Image>
+        <Image fluid rounded alt="Building image" src={tldata[index]?.imageurl}></Image>
       </S.ImgComp>
       <Col xs="10" md="5" lg="5">
         <S.ArrDiv className="d-flex flex-column justify-content-center">

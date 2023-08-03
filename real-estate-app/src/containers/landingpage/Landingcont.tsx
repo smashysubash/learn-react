@@ -2,18 +2,27 @@ import { Building } from "../../components/building/Building";
 import { FrontLanding } from "../../components/fontlanding/FrontLanding";
 import { Timeline } from "../../components/timeline/Timeline";
 import { About } from "../../components/about/About";
-import { Contactus } from "../../components/contactus/Contactus";
+import { ContactUs } from "../../components/contactus/ContactUs";
 import { Navbar } from "../../components/navbar/Navbar";
 import * as S from "./style";
 const { landingpage } = require("../../data/landingpage.config");
-const { front, about, building, timeline, testimonal, contact, footer,navbar} = landingpage;
+const {
+  front,
+  about,
+  building,
+  timeline,
+  testimonal,
+  contact,
+  footer,
+  navbar,
+} = landingpage;
 
 export const Landingcont = () => {
   return (
     <>
-    <Navbar {...navbar}/>
+      <Navbar {...navbar} />
       <S.HeadDiv image="./images/photo2.jpg" id="home">
-        <FrontLanding { ...front } />
+        <FrontLanding {...front} />
         <S.Curve>
           <svg
             id="svg"
@@ -31,10 +40,10 @@ export const Landingcont = () => {
         </S.Curve>
       </S.HeadDiv>
       <S.HDiv></S.HDiv>
-      <About {...about}/>
-      <Building {...building} {...testimonal}/>
-      <Timeline {...timeline}/>
-      <Contactus {...contact} {...footer}/>
+      <About {...about} />
+      <Building {...building} {...testimonal} />
+      <Timeline {...timeline} />
+      <ContactUs {...contact} {...footer} />
     </>
   );
 };

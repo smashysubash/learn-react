@@ -116,3 +116,7 @@ export const Imgcol = styled(Col)`
     top: 5px;
   }
 `;
+
+export const Imgbuilding = styled(Image)`
+  height: 500px;
+`

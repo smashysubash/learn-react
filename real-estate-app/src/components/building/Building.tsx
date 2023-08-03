@@ -1,6 +1,5 @@
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import * as S from "./style";
-import { landingpage } from "../../data/landingpage.config";
 import { Fade } from "react-awesome-reveal";
 
 interface Props {
@@ -15,6 +14,26 @@ interface Props {
   profileimg: string;
 }
 
+const _sidediv = (headdiv: string, contentdiv: string, vrbutton: string) => {
+  return (
+    <Container fluid="md">
+      <Row className="justify-content-center mt-3">
+        <Fade direction="up" triggerOnce>
+          <Col className="mb-4" xs="12" md="9">
+            <S.TitleHead>{headdiv}</S.TitleHead>
+          </Col>
+          <Col className="mb-4" xs="12" md="9">
+            <S.Aboutcont>{contentdiv}</S.Aboutcont>
+          </Col>
+          <Col className="mb-4" xs="12" md="9">
+            <S.Button2>{vrbutton}</S.Button2>
+          </Col>
+        </Fade>
+      </Row>
+    </Container>
+  );
+};
+
 export const Building = ({
   headdiv,
   contentdiv,
@@ -24,28 +43,8 @@ export const Building = ({
   authorrole,
   bgtext,
   buildingimg,
-  profileimg
+  profileimg,
 }: Props) => {
-  const sidediv = () => {
-    return (
-      <Container fluid="md">
-        <Row className="justify-content-center mt-3">
-          <Fade direction="up" triggerOnce>
-            <Col className="mb-4" xs="12" md="9">
-              <S.TitleHead>{headdiv}</S.TitleHead>
-            </Col>
-            <Col className="mb-4" xs="12" md="9">
-              <S.Aboutcont>{contentdiv}</S.Aboutcont>
-            </Col>
-            <Col className="mb-4" xs="12" md="9">
-              <S.Button2>{vrbutton}</S.Button2>
-            </Col>
-          </Fade>
-        </Row>
-      </Container>
-    );
-  };
-
   return (
     <>
       <Row className="mt-4">
@@ -55,21 +54,22 @@ export const Building = ({
           className="p-4 d-flex align-self-center justify-content-center"
         >
           <Fade direction="left" triggerOnce>
-            <Image
-              style={{ height: "500px" }}
+            <S.Imgbuilding
+              height={"500px"}
               src={buildingimg}
+              alt="building image"
               fluid
               rounded
-            ></Image>
+            ></S.Imgbuilding>
           </Fade>
         </S.Imgcol>
-        <Col className="mt-5">{sidediv()}</Col>
+        <Col className="mt-5">{_sidediv(headdiv, contentdiv, vrbutton)}</Col>
       </Row>
       <S.Pcontainer>
         <Row className="justify-content-center">
           <Col lg="8" sm="10">
             <Fade direction="up" triggerOnce>
-              <S.Pimage src={profileimg}></S.Pimage>
+              <S.Pimage alt="profile pic" src={profileimg}></S.Pimage>
             </Fade>
           </Col>
           <S.QuoteDiv lg="8" sm="10" className="mt-5">
@@ -80,13 +80,13 @@ export const Building = ({
           <Col lg="8" sm="10" className="mt-3">
             <Fade direction="up" cascade triggerOnce>
               <S.NameDiv>{author}</S.NameDiv>
-              
+
               <div>{authorrole}</div>
             </Fade>
           </Col>
         </Row>
       </S.Pcontainer>
-      <S.Imgcontainer className="mt-5" image="/images/image2.jpg">
+      <S.Imgcontainer className="mt-5"  image="/images/image2.jpg">
         <S.Pcontainer fluid="sm" className="ps-5 pe-5">
           <Row className="d-flex justify-content-center">
             <Col className="justify-content-center d-flex ps-5 pe-5" xs="12">
