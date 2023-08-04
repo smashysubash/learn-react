@@ -3,6 +3,7 @@ export const landingpage = {
     heading: "A unique fusion of convenience and luxury",
     explorebutton: "Explore Dax",
     vrbutton: "Take a look at VR",
+    backgroundimg: "/images/photo2.jpg",
   },
   about: {
     title: "ABOUT DAX",
@@ -16,6 +17,7 @@ export const landingpage = {
       "Volu ptates doloribus ipsam odit harum quae corporis distinctio consequuntur vitae doloremque eius praesentium dolor placeat labore ab, accusamus ex quis similique porro.",
     vrbutton: "Take a look at VR",
     buildingimg: "/images/image1.jpg",
+    buildingimgheight: "500px"
   },
   testimonal: {
     quote:
@@ -24,6 +26,7 @@ export const landingpage = {
     authorrole: "Lead architect and partner",
     bgtext: "Discover the true definition of luxury",
     profileimg: "/images/avathar2.jpg",
+    buildingbackground: "/images/image2.jpg"
   },
   contact: {
     title: "Developer",

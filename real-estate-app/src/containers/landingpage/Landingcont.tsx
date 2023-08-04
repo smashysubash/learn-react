@@ -21,7 +21,7 @@ export const Landingcont = () => {
   return (
     <>
       <Navbar {...navbar} />
-      <S.HeadDiv image="./images/photo2.jpg" id="home">
+      <S.HeadDiv image={front?.backgroundimg} id="home">
         <FrontLanding {...front} />
         <S.Curve>
           <svg

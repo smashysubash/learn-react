@@ -12,6 +12,8 @@ interface Props {
   bgtext: string;
   buildingimg: string;
   profileimg: string;
+  buildingbackground: string;
+  buildingimgheight: string;
 }
 
 const _sidediv = (headdiv: string, contentdiv: string, vrbutton: string) => {
@@ -44,6 +46,8 @@ export const Building = ({
   bgtext,
   buildingimg,
   profileimg,
+  buildingbackground,
+  buildingimgheight
 }: Props) => {
   return (
     <>
@@ -55,7 +59,7 @@ export const Building = ({
         >
           <Fade direction="left" triggerOnce>
             <S.Imgbuilding
-              height={"500px"}
+              height={buildingimgheight}
               src={buildingimg}
               alt="building image"
               fluid
@@ -86,7 +90,7 @@ export const Building = ({
           </Col>
         </Row>
       </S.Pcontainer>
-      <S.Imgcontainer className="mt-5"  image="/images/image2.jpg">
+      <S.Imgcontainer className="mt-5" image={buildingbackground}>
         <S.Pcontainer fluid="sm" className="ps-5 pe-5">
           <Row className="d-flex justify-content-center">
             <Col className="justify-content-center d-flex ps-5 pe-5" xs="12">
