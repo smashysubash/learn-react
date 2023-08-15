@@ -26,7 +26,7 @@ export const Login = () => {
       event.stopPropagation();
     } else {
       console.log(email, password);
-      const token = login(email, password);
+      login(email, password);
     }
     setValidated(true);
   };
@@ -70,7 +70,7 @@ export const Login = () => {
       <Toaster />
       <div className={`m-3 ${style.logindiv} ${style.magicpattern}`}>
         <Form
-          style={{ zIndex: 2 }}
+          style={{ zIndex: 2, position: "inherit" }}
           noValidate
           validated={validated}
           onSubmit={handleSubmit}

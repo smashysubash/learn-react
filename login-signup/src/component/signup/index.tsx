@@ -65,7 +65,7 @@ export const Signup = () => {
       <Toaster />
       <div className={`m-3 ${style.logindiv} ${style.magicpattern}`}>
         <Form
-          style={{ zIndex: 2 }}
+          style={{ zIndex: 2, position: "inherit" }}
           noValidate
           validated={validated}
           onSubmit={handleSubmit}
@@ -143,8 +143,8 @@ export const Signup = () => {
             className="m-3"
             style={{ display: "flex", justifyContent: "end" }}
           >
-            <Link to="/signup" style={{ paddingRight: "30px" }}>
-              Create new account
+            <Link to="/login" style={{ paddingRight: "30px" }}>
+              Already have an account?
             </Link>
           </div>
         </Form>
