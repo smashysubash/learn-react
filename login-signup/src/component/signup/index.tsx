@@ -1,35 +1,81 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./style.module.css";
 import { Button, Container, FloatingLabel, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { authService } from "../../services/auth.service";
+import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import axios, { AxiosError } from "axios";
 
 export const Signup = () => {
+  const navigate = useNavigate();
   const [validated, setValidated] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [repassword, setRePassword] = useState("");
+  const [repassword, setRepassword] = useState("");
+
+  useEffect(() => {
+    if (authService.isAuthenticated()) {
+      navigate("/dashboard");
+    }
+  }, []);
 
   const handleSubmit = (event: any) => {
     const form = event.currentTarget;
+    event.preventDefault();
     if (form.checkValidity() === false) {
-      event.preventDefault();
       event.stopPropagation();
+    } else {
+      console.log(email, password);
+      signup(email, password);
     }
     setValidated(true);
   };
+
+  const signup = async (email: string, password: string) => {
+    const toastId = toast.loading("Creating account..");
+    try {
+      const response = await axios.post(
+        "https://api.escuelajs.co/api/v1/auth/register",
+        {
+          email,
+          password,
+        }
+      );
+      if (response.status === 200 || response.status === 201) {
+        toast.success("Account created sucessfully", { id: toastId });
+        setTimeout(() => navigate("/login"), 1000);
+      }
+    } catch (err) {
+      if (err instanceof AxiosError) {
+        if (!err?.response) {
+          toast.error(err.message, { id: toastId });
+        } else {
+          toast.error(err.message, { id: toastId });
+        }
+      }
+    }
+  };
   return (
     <Container
-      className="d-flex justify-content-center align-items-center "
-      style={{ height: "95vh" }}
+      fluid="xs"
+      className={`d-flex align-items-center rounded bg-light border ${style.login}`}
+      style={{}}
     >
-      <div className="border bg-light rounded" style={{ width: "350px" }}>
+      <Toaster />
+      <div className={`m-3 ${style.logindiv} ${style.magicpattern}`}>
         <Form
-          className="p-3"
+          style={{ zIndex: 2 }}
           noValidate
           validated={validated}
           onSubmit={handleSubmit}
         >
-          <h3 className="p-3 d-flex justify-content-center">SIGNUP</h3>
+          <h3
+            className="p-3 d-flex justify-content-center"
+            style={{ position: "sticky", zIndex: 1, fontWeight: "bolder" }}
+          >
+            SIGNUP
+          </h3>
           <FloatingLabel
             className="m-3"
             controlId="floatingInput"
@@ -46,10 +92,11 @@ export const Signup = () => {
               Please provide a valid Email.
             </Form.Control.Feedback>
           </FloatingLabel>
+
           <FloatingLabel
             className="m-3"
             controlId="floatingPassword"
-            label="Password"
+            label="password"
           >
             <Form.Control
               type="password"
@@ -62,26 +109,44 @@ export const Signup = () => {
           <FloatingLabel
             className="m-3"
             controlId="floatingPassword"
-            label="Re-type Password"
+            label="Retype Password"
           >
             <Form.Control
               type="password"
               value={repassword}
-              onChange={(e) => setRePassword(e.target.value)}
+              onChange={(e) => setRepassword(e.target.value)}
               required
-              placeholder="Re-type Password"
+              placeholder="Password"
+              isInvalid={!(password === repassword)}
             />
+            <Form.Control.Feedback type="invalid">
+              Password doesn't match.
+            </Form.Control.Feedback>
           </FloatingLabel>
-          <Button className="m-3" style={{ width: "285px" }} type="submit">
-            Submit form
-          </Button>
-          <Link
-            to="/login"
+          <div
             className="m-3"
-            style={{ position: "relative", right: "-140px" }}
+            style={{ display: "flex", justifyContent: "center" }}
           >
-            Already have account?
-          </Link>
+            <Button
+              className={`${style.btm}`}
+              style={{
+                zIndex: 1,
+                position: "sticky",
+                backgroundColor: "#6c63ff",
+              }}
+              type="submit"
+            >
+              Submit form
+            </Button>
+          </div>
+          <div
+            className="m-3"
+            style={{ display: "flex", justifyContent: "end" }}
+          >
+            <Link to="/signup" style={{ paddingRight: "30px" }}>
+              Create new account
+            </Link>
+          </div>
         </Form>
       </div>
     </Container>
